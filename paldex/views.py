@@ -1,10 +1,7 @@
-from django.shortcuts import render, HttpResponse
-from .models import TodoItem
+# views.py
+from django.shortcuts import render
+from .models import PalModel
 
-# Create your views here.
-def home(request):
-  return render(request, "home.html")
-
-def todos(request):
-  items = TodoItem.objects.all()
-  return render(request, "todos.html", {"todos": items})
+def home_view(request):
+    pal_data = PalModel.objects.all()
+    return render(request, 'home.html', {'pal_data': pal_data})

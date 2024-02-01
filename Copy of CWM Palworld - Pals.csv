@@ -1,0 +1,114 @@
+Name,Image,Type,Skill,Work,Drops,Price
+Lamball,,Neutral,Fluffy Shield,"Farming L1, Handiwork L1, Transporting L1","Lamball Mutton, Wool",1000
+Cattiva,,Neutral,Cat Helper,"Gathering L1, Handiwork L1, Mining L1, Transporting L1",Red Berries,1000
+Chikipi,,Neutral,Egg Layer,"Farming L1, Gathering L1","Chikipi Poultry, Egg",1000
+Lifmunk,,Grass,Lifmunk Recoil,"Gathering L1, Handiwork L1, Lumbering L1, Medicine L1, Planting L1","Berry Seeds, Low Grade Medical Supplies",1010
+Foxparks,,Fire,Huggy Fire,Kindling L1,"Flame Organ, Leather",1040
+Fuack,,Water,Surfing Slam,"Handiwork L1, Transporting L1, Watering L1","Leather, Pal Fluids",1120
+Sparkit,,Electric,Static Electricity,"Electricity L1, Handiwork L1, Transporting L1",Electric Organ,1030
+Tanzee,,Grass,Cheery Rifle,"Gathering L1, Handiwork L1, Lumbering L1, Planting L1, Transporting L1",Mushroom,1280
+Rooby,,Fire,Tiny Spark,Kindling L1,"Flame Organ, Leather",2950
+Pengullet,,"Ice, Water",Pengullet Cannon,"Cooling L1, Handiwork L1, Transporting L1, Watering L1","Ice Organ, Pal Fluids",1080
+Penking,,"Ice, Water",Brave Sailor,"Cooling L2, Handiwork L2, Mining L2, Transporting L2, Watering L2","Ice Organ, Penking Plume",5410
+Jolthog,,Electric,Jolt Bomb,Electricity L1,Electric Organ,1060
+Gumoss,,"Grass, Ground",Logging Assistance,Planting L1,"Berry Seeds, Gumoss Leaf",1310
+Vixy,,Neutral,Dig Here,"Farming L1, Gathering L1","Bone, Leather",1000
+Hoocrates,,Dark,Dark Knowledge,Gathering L1,"Fiber, High Grade Technical Manual",1050
+Teafant,,Water,Soothing Shower,Watering L1,Pal Fluids,1000
+Depresso,,Dark,Caffeine Inoculation,"Handiwork L1, Mining L1, Transporting L1",Venom Gland,1050
+Cremis,,Neutral,Fluffy Wool,"Farming L1, Gathering L1",Wool,1420
+Daedream,,Dark,Dream Chaser,"Gathering L1, Handiwork L1, Transporting L1","Small Pal Soul, Venom Gland",1330
+Rushoar,,Ground,Hard Head,Mining L1,"Bone, Leather, Rushoar Pork",1680
+Nox,,Dark,Kuudere,Gathering L1,"Leather, Small Pal Soul",1480
+Fuddler,,Ground,Ore Detector,"Handiwork L1, Mining L1, Transporting L1",Leather,1360
+Killamari,,Dark,Fried Squid,"Gathering L1, Transporting L2",Venom Gland,1200
+Mau,,Dark,Gold Digger,Farming L1,Gold Coin,1000
+Celaray,,Water,Zephyr Glider,"Transporting L1, Watering L1",Pal Fluids,2860
+Direhowl,,Neutral,Direhowl Rider,Gathering L1,"Gold Coin, Leather, Ruby",1920
+Tocotoco,,Neutral,Eggbomb Launcher,Gathering L1,"Gunpowder, Tocotoco Feather",1090
+Flopie,,Grass,Helper Bunny,"Gathering L1, Handiwork L1, Medicine L1, Planting L1, Transporting L1","Low Grade Medical Supplies, Wheat Seeds",1220
+Mozzarina,,Neutral,Milk Maker,Farming L1,"Milk, Mozzarina Meat",2620
+Bristla,,Grass,Princess Gaze,"Handiwork L1, Gathering L1, Medicine L2, Planting L1, Transporting L1","Lettuce Seeds, Wheat Seeds",1140
+Gobfin,,Water,Angry Shark,"Handiwork L1, Transporting L1, Watering L2",Pal Fluids,1840
+Hangyu,,Ground,Flying Trapeze,"Gathering L1, Handiwork L1, Transporting L2",Fiber,1020
+Mossanda,,Grass,Grenadier Panda,"Handiwork L2, Lumbering L2, Planting L2, Transporting L3","Leather, Mushroom, Tomato Seeds",6200
+Woolipop,,Neutral,Candy Pop,Farming L1,"Cotton Candy, High Quality Pal Oil",1450
+Caprity,,Grass,Berry Picker,"Farming L1, Planting L2","Caprity Meat, Horn, Red Berries",2510
+Melpaca,,Neutral,Pacapaca Wool,Farming L1,"Leather, Wool",2740
+Eikthyrdeer,,Neutral,Guardian of the Forest,Lumbering L2,"Eikthyrdeer Venison, Horn, Leather",2620
+Nitewing,,Neutral,Travel Companion,Gathering L2,Leather,6300
+Ribbuny,,Neutral,Skilled Fingers,"Gathering L1, Handiwork L1, Transporting L1","Beautiful Flower, Leather",1160
+Incineram,,"Dark, Fire",Flameclaw Hunter,"Handiwork L2, Kindling L1, Mining L1, Transporting L2","Horn, Leather",4780
+Cinnamoth,,Grass,Mysterious Scales,"Medicine L1, Planting L2","Honey, Lettuce Seeds, Wheat Seeds",5700
+Arsox,,Fire,Warm Body,"Kindling L2, Lumbering L1","Horn, Flame Organ",3520
+Dumud,,Ground,Soil Improver,"Mining L2, Transporting L1, Watering L1","Raw Dumud, High Quality Pal Oil",4690
+Cawgnito,,Dark,Telepeck,Lumbering L1,"Bone, Venom Gland, Small Pal Soul",1840
+Leezpunk,,Dark,Sixth Sense,"Gathering L1, Handiwork L1, Transporting L1","Copper Key, Silver Key",1720
+Loupmoon,,Dark,Claws Glistening in the Dark,Handiwork L2,Bone,2400
+Galeclaw,,Neutral,Galeclaw Rider,Gathering L2,"Galeclaw Poultry, Leather",2010
+Robinquill,,Grass,Hawk Eye,"Gathering L2, Handiwork L2, Lumbering L1, Medicine L1, Planting L1, Transporting L2","Wheat Seeds, Arrow",2050
+Gorirat,,Neutral,Full-power Gorilla Mode,"Handiwork L1, Lumbering L2, Transporting L3","Leather, Bone",2010
+Beegarde,,Grass,Worker Bee,"Farming L1, Gathering L1, Handiwork L1, Lumbering L1, Medicine L1, Planting L1, Transporting L2",Honey,1880
+Elizabee,,Grass,Queen Bee Command,"Gathering L2, Handiwork L2, Lumbering L1, Medicine L2, Planting L2","Honey, Elizabee’s Staff",6830
+Grintale,,Neutral,Plump Body,Gathering L2,High Quality Pal Oil,5510
+Swee,,Ice,Fluffy,"Cooling L1, Gathering L1",Wool,1180
+Sweepa,,Ice,King of Fluff,"Cooling L2, Gathering L2",Wool,6400
+Chillet,,"Dragon, Ice",Wriggling Weasel,"Cooling L1, Gathering L1",Leather,3450
+Univolt,,Electric,Swift Deity,"Electricity L1, Lumbering L1","Leather, Electric Organ, Horn",4280
+Foxcicle,,Ice,Aurora Guide,-,"Ice Organ, Leather",3730
+Pyrin,,Fire,Red Hare,"Kindling L2, Lumbering L1","Flame Organ, Leather",6720
+Reindrix,,Ice,Cool Body,"Cooling L2, Lumbering L2","Reindrix Venison, Leather, Horn, ice Organ",2800
+Rayhound,,Electric,Jumping Force,Generating Electricity L2,Electric Organ,3880
+Kitsun,,Fire,Clear Mind,-,"Flame Organ, Leather",3170
+Dazzi,,Electric,Lady of Lightning,"Electricity L1, Handiwork L1, Transporting L1",Electric Organ,1390
+Lunaris,,Neutral,Antigravity,"Gathering L1, Handiwork L3, Transporting L1",Paldium Fragment,1760
+Dinossom,,"Dragon, Grass",Fragrant Dragon,"Lumbering L2, Planting L2",Wheat Seeds,3240
+Surfent,,Water,Swiss Swimmer,Watering L2,Pal Fluids,5050
+Maraith,,Dark,Messenger of Death,"Gathering L2, Mining L1","Bone, Small Pal Soul",1570
+Digtoise,,Ground,Drill Crusher,Mining L3,"Ore, High Quality Pal Oil",2980
+Tombat,,Dark,Ultrasonic Sensor,"Gathering L2, Mining L2, Transporting L2","Leather, Small pal Soul",3810
+Lovander,,Neutral,Heart Drain,"Handiwork L2, Medicine L2, Mining L1, Transporting L2","Mushroom, Cake, Suspicious Juice, Strange Juice",2450
+Flambelle,,Fire,Magma Tears,"Farming L1, Handiwork L1, Kindling L1, Transporting L1","Flame Organ, High Quality Pal Oil",2500
+Vanwyrm,,"Dark, Fire",Aerial Maurader,"Kindling L1, Transporting L3","Bone, Ruby, Gold Coin",4360
+Bushi,,Fire,Brandish Blade,"Gathering L1, Handiwork L1, Kindling L2, Lumbering L3, Transporting L2","Bone, Ingot",4520
+Beakon,,Electric,Thunderous,"Electricity L2, Gathering L1, Transporting L3",Electric Organ,7490
+Ragnahawk,,Fire,Flame Wing,"Kindling L3, Transporting L3",Flame Organ,6720
+Katress,,Dark,Grimoire Collector,"Handiwork L2, Medicine L2, Transporting L2","Leather, Katress Hair, High Grade Technical Manual",4120
+Wixen,,Fire,Lord Fox,"Handiwork L3, Kindling L2, Transporting L2","Flame Organ, High Grade Technical Manual",1540
+Verdash,,Grass,Grassland Speedster,"Gathering L3, Handiwork L3, Lumbering L2, Planting L2, Transporting L2","Leather, Bone",2200
+Vaelet,,Grass,Purification of Gaia,"Gathering L2, Handiwork L2, Medicine L3, Planting L2, Transporting L1","Low Grade Medical Supplies, Tomato Seeds",1960
+Sibelyx,,Ice,Silk Maker,"Cooling L2, Farming L1, Medicine L2","High Quality Cloth, Ice Organ",5900
+Elphidran,,Dragon,Amicable Holy Dragon,Lumbering L2,High Quality Pal Oil,5230
+Kelpsea,,Water,Aqua Spout,Watering L1,"Raw Kelpsea, Pal Fluids",1260
+Azurobe,,"Dragon, Water",Waterwing Dance,Watering L3,Cloth,5600
+Cryolinx,,Ice,Dragon Hunter,"Cooling L3, Handiwork L1, Lumbering L2",Ice Organ,8440
+Blazehowl,,"Dark, Fire",HellFire Lion,"Kindling L3, Lumbering L2",Flame Organ,4040
+Relaxaurus,,"Dragon, Water",Hungry Missile,"Transporting L1, Watering L2","High Quality Pal Oil, Ruby",10240
+Broncherry,,Grass,Overaffectionate,Planting L3,"Broncherry Meat, Tomato Seeds",2920
+Petallia,,Grass,Blessing of the Flower Spirit,"Gathering l2, Handiwork L2, Medicine L2, Planting L3, Transporting L1",Beautiful Flower,3590
+Reptyro,,"Fire, Ground",Ore-Loving Beast,"Kindling L3, Mining L3",Flame Organ,6940
+Kingpaca,,Neutral,King of Muscles,Gathering L1,Wool,5800
+Mammorest,,Grass,Gaia Crusher,"Lumbering L2, Mining L2, Planting L2","High Quality Pal Oil, Leather, Mammorest Meat",9450
+Wumpo,,Ice,Guardian of the Snowy Mountain,"Cooling L2, Handiwork L2, Lumbering L3, Transporting L4","Ice Organ, Beautiful Flower",5900
+Warsect,,"Grass, Ground",Hard Armor,"Handiwork L1, Lumbering L3, Planting L1, Transporting L3",Honey,6830
+Fenglope,,Neutral,Wind and Clouds,Lumbering L2,"Leather, Horn",2250
+Felbat,,Dark,Life Steal,Medicine L3,"Cloth, Small Pal Soul",2100
+Quivern,,Dragon,Sky Dragon's Affection,"Gathering L2, Handiwork L1, Mining L2, Transporting L3",High Quality Pal Oil,6830
+Blazamut,,Fire,Magma Kaiser,"Kindling L3, Mining L4","Coal, Flame Organ",10520
+Helzephyr,,Dark,Wings of Death,Transporting L3,"Venom Gland, Medium Pal Soul",7840
+Astegon,,"Dark, Dragon",Black Ankylosaur,"Handiwork L1, Mining L4","Pal Metal Ingot, Pure Quartz",8200
+Menasting,,"Dark, Ground",Steel Scorpion,"Lumbering L2, Mining L3","Coal, Venom Gland",7050
+Anubis,,Ground,Guardian of the Desert,"Handiwork L4, Mining L3, Transporting L2","Bone, Large Pal Soul, Innovative Technical Manual",4960
+Jormuntide,,"Dragon, Water",Stormbringer Sea Dragon,Watering L4,Pal Fluids,9320
+Suzaku,,Fire,Wings of Fire,Kindling L3,Flame Organ,9840
+Grizzbolt,,Electric,Yellow Tank,"Electricity L3, Handiwork L2, Lumbering L2, Transporting L3","Electric Organ, Leather",7720
+Lyleen,,Grass,Harvest Goddess,"Gathering L2, Handiwork L3, Medicine L3, Planting L4",-,7160
+Faleris,,Fire,Scorching Predator,"Kindling L3, Transporting L3",Flame Organ,6720
+Orserk,,"Dragon, Electric",Ferocious Thunder Dragon,"Electricity L4, Handiwork L2, Transporting L3",Electric Organ,8320
+Shadowbeak,,Dark,Modified DNA,Gathering L1,"Pal Metal Ingot, Carbon Fiber, Innovative Technical Manual",9060
+Paladius,,Neutral,Holy Knight Of The Firmament,"Lumbering L2, Mining L2",Pal Metal Ingot,8810
+Necromus,,Dark,Dark Knight of the Abyss,"Lumbering L2, Mining L2","Pal Metal Ingot, Large Pal Soul",8930
+Frostallion,,Ice,Ice Steed,Cooling L4,"Ice Organ, Diamond",8440
+Jetragon,,Dragon,Aerial Missile,Gathering L3,"Pure Quartz, Polymer, Carbon Fiber, Diamond",8680
+Boltmane,,Electric,-,-,Flame Organ,4200
+Dragostrophe,,"Dark, Dragon",-,-,Bone,8440
