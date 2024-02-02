@@ -10,10 +10,11 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from .views import home_view
+from .views import home_view, pals_view
 
 urlpatterns = [
     path('', home_view, name='home'),
+    path("pals/", pals_view, name='pals')
     # ... other URL patterns ...
 ]
 

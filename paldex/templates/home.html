@@ -4,30 +4,7 @@
 {% block title %} Home Page {% endblock %}
 
 {% block content %}
-    <h1>Welcome to the Home Page</h1>
-    
-    <div class="row">
-        {% for pal in pal_data %}
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    {% if pal.image %}
-                        <img src="{{ pal.image.url }}" alt="{{ pal.name }}" class="card-img-top">
-                    {% else %}
-                        <p class="text-center">No image available for {{ pal.name }}</p>
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title">{{ pal.name }}</h5>
-                        <p class="card-text">Type: {{ pal.type }}</p>
-                        <p class="card-text">Skill: {{ pal.skill }}</p>
-                        <p class="card-text">Work: {{ pal.work }}</p>
-                        <p class="card-text">Drops: {{ pal.drops }}</p>
-                        <p class="card-text">Price: ${{ pal.price }}</p>
-                        <!-- Add other fields as needed -->
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
+
+    <h1>Welcome to the Palworld Paldex</h1>
+
 {% endblock %}
-
-

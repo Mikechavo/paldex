@@ -7,7 +7,7 @@ class TodoItem(models.Model):
 
 class PalModel(models.Model):
     name = models.CharField(_("Name"), max_length=200)
-    image = models.URLField(_("Image"), max_length=500)
+    image = models.ImageField(upload_to='images/')
     type = models.CharField(_("Type"), max_length=200)
     skill = models.CharField(_("Skill"), max_length=200)
     work = models.CharField(_("Work"), max_length=200)
