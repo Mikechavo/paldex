@@ -1,10 +1,23 @@
 {% extends "base.html" %}
-{% load bootstrap4 %}
+{% load bootstrap4 static %}
 
 {% block title %} Home Page {% endblock %}
 
 {% block content %}
-
-    <h1>Welcome to the Palworld Paldex</h1>
-
+<style>
+    body {
+        background-color: #ad4816; /* Set your desired background color */
+    }
+</style>
+<div class="container text-center">
+    <h1 class="mt-5" style="color:blue">Welcome To Mike's Mini-Paldex</h1>
+    <img src="{% static 'Legendary_Sphere_icon.webp' %}" alt="" class="card-img-top" style="max-height: 80px; max-width: 80px;">
+    <div class="card bg-light mx-auto mt-2" style="max-width: 1000px; max-height: 1000px; overflow: hidden;">
+        <img src="{% static 'palworldHomePage.jpg' %}" alt="" class="card-img-top" style="max-height: 100%;">
+    </div>
+    <br>
+    <div class="card bg-light mx-auto mt-3" style="max-width: 900px; max-height: 900px;">
+        <P><strong> Mike's Mini-Paldex consists of basic Palworld Pal data like type, skills, work, drops and price for easy access.</strong></P>
+    </div>
+</div>
 {% endblock %}

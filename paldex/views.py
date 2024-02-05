@@ -9,3 +9,6 @@ def home_view(request):
 def pals_view(request):
     pal_data = PalModel.objects.all()
     return render(request, 'pals.html', {'pal_data': pal_data})
+
+def contact_view(request):
+    return render(request, 'contact.html')
