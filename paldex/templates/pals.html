@@ -4,12 +4,22 @@
 {% block title %} Home Page {% endblock %}
 
 {% block content %}
+<style>
+    body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #ad4816;
+}
+
+h1, p {
+    font-family: 'Comic Sans MS', sans-serif;
+}
+</style>
     <div class="container my-5">
-        <h1 class="display-4 text-center mb-4">Welcome to the Paldex</h1>
+        <h1 class="display-4 text-center mb-4" style="color:blue; font-weight: bold; text-transform: uppercase">Paldex</h1>
     
         <div class="row">
             {% for pal in pal_data %}
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4;">
                     <div class="card h-100 bg-light">
                         {% if pal.image %}
                             <img src="{{ pal.image.url }}" alt="{{ pal.name }}" class="card-img-top">
