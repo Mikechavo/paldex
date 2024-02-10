@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Search Results{% endblock %}
+{% block content %}
+<style>
+    body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #ad4816;
+}
+
+h1, p {
+    font-family: 'Comic Sans MS', sans-serif;
+}
+</style>
+<div class="container my-5">
+    <button>  
+        <a class="nav-link" href="{% url 'pals' %}">Go Back</a>
+    </button>
+    <h1 class="display-4 text-center mb-4">Search Results</h1>
+    {% if query %}
+    <h3 class="text-center mb-3">Results for: {{ query }}</h3>
+    {% endif %}
+    <div class="row">
+        {% if pal_data %}
+        {% for pal in pal_data %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 bg-light">
+                {% if pal.image %}
+                <img src="{{ pal.image.url }}" alt="{{ pal.name }}" class="card-img-top">
+                {% else %}
+                <div class="text-center bg-secondary py-3">
+                    <p class="m-0 text-light">No image available</p>
+                    <small class="text-muted">{{ pal.name }}</small>
+                </div>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ pal.name }}</h5>
+                    <p class="card-text"><strong>Type:</strong> {{ pal.type }}</p>
+                    <p class="card-text"><strong>Skill:</strong> {{ pal.skill }}</p>
+                    <p class="card-text"><strong>Work:</strong> {{ pal.work }}</p>
+                    <p class="card-text"><strong>Drops:</strong> {{ pal.drops }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ pal.price }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="col text-center">
+            <p>No results found.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

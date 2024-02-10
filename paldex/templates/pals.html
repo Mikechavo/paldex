@@ -17,6 +17,31 @@ h1, p {
     <div class="container my-5">
         <h1 class="display-4 text-center mb-4" style="color:blue; font-weight: bold; text-transform: uppercase">Paldex</h1>
     
+    <!-- Search bar with dropdown -->
+        <div class="row mb-4">
+            <div class="col-md-6 offset-md-3">
+                <form action="{% url 'search' %}" method="GET">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search by type..." name="q">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{% url 'search' %}?q=Dark">Dark</a>
+                                <a class="dropdown-item" href="{% url 'search' %}?q=Dragon">Dragon</a>
+                                <a class="dropdown-item" href="{% url 'search' %}?q=Grass">Grass</a>
+                                <a class="dropdown-item" href="{% url 'search' %}?q=Ground">Ground</a>
+                                <a class="dropdown-item" href="{% url 'search' %}?q=Electric">Electric</a>
+                                <a class="dropdown-item" href="{% url 'search' %}?q=Fire">Fire</a>
+                                <a class="dropdown-item" href="{% url 'search' %}?q=Ice">Ice</a>
+                                <a class="dropdown-item" href="{% url 'search' %}?q=Neutral">Neutral</a>
+                                <!-- Add more types as needed -->
+                            </div>
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="row">
             {% for pal in pal_data %}
                 <div class="col-md-4 mb-4;">
