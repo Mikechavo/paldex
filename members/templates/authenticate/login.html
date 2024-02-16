@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load bootstrap4 static %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #ad4816; /* Set your desired background color */
+        font-family: 'Comic Sans MS', sans-serif;
+    }
+
+h1, p {
+    font-family: 'Comic Sans MS', sans-serif;
+}
+</style>
+<div class="container text-center">
+   <h1>login</h1>
+   <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username</label>
+      <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password">
+    </div>
+    <div class="mb-3 form-check">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}
