@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'paldex',
     'bootstrap4',
     'members',
+    
 ]
 
 MIDDLEWARE = [
