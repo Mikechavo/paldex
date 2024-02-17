@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load bootstrap4 static %}
+
+{% block title %} Register {% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #ad4816; /* Set your desired background color */
+        font-family: 'Comic Sans MS', sans-serif;
+    }
+
+    h1, p {
+        font-family: 'Comic Sans MS', sans-serif;
+    }
+</style>
+<div>
+    <h1>Register</h1>
+    <form method="post" action="{% url 'register_user' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            There was an error with your form:
+            {{ form.errors }}
+        </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
