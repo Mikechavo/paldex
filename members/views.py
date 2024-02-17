@@ -11,9 +11,14 @@ def login_user(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
        login(request, user)
-       return redirect('home')
+       return redirect('pals')
     else:
        messages.success(request, ("There was an error logging in, try again") )
        return redirect('login')
  else:
   return render(request, 'authenticate/login.html', {})
+
+def logout_user(request):
+  logout(request)
+  messages.success(request, ("You have been logged out") )
+  return redirect('home')
