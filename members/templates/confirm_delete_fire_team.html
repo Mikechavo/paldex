@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} Confirm Delete Fire Team {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Confirm Delete Fire Team</h1>
+    <p>Are you sure you want to delete the Fire Team "{{ fire_team.name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+{% endblock %}

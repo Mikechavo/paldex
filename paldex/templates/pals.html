@@ -64,10 +64,25 @@
                     <p class="card-text"><strong>Drops:</strong> {{ pal.drops }}</p>
                     <p class="card-text"><strong>Price:</strong> ${{ pal.price }}</p>
                     <!-- Add other fields as needed -->
-                    <form method="POST" action="{% url 'add_to_fire_team' pal.name %}">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-primary">Add to Fire Team</button>
-                    </form>
+                    {% if user.is_authenticated %}
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Add to Fire Team
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <form method="post" action="{% url 'create_team' %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">Create New Fire Team</button>
+                            </form>
+                            {% for fire_team in user.fire_teams_led.all %}
+                                <form method="post" action="{% url 'add_to_fire_team' pal.id fire_team.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="dropdown-item">{{ fire_team.name }}</button>
+                                </form>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
                 </div>
             </div>
         </div>

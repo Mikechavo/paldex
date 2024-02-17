@@ -15,4 +15,4 @@ class RegisterUserForm(UserCreationForm):
 class TeamForm(forms.ModelForm):
     class Meta:
         model = FireTeam  # Reference the Team model
-        fields = ['name', 'members']
+        fields = ['name']

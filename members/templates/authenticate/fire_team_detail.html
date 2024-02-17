@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %} Fire Team Detail {% endblock %}
+
+{% block content %}
+<div class="container">
+    <u><h1>Fire Team Details</h1></u>
+    <h3>Fire Team Name: {{ fire_team.name }}</h3>
+    <!-- <p>Fire Team ID: {{ fire_team.id }}</p> -->
+    <h2>Members:</h2>
+    <div class="row">
+        {% for member in fire_team.members.all %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <img src="{{ member.image.url }}" alt="{{ member.name }}" class="card-img-top">
+                    <h5 class="card-title">{{ member.name }}</h5>
+                    <p class="card-text"><strong>Type:</strong> {{ member.type }}</p>
+                    <p class="card-text"><strong>Skill:</strong> {{ member.skill }}</p>
+                    <p class="card-text"><strong>Work:</strong> {{ member.work }}</p>
+                    <p class="card-text"><strong>Drops:</strong> {{ member.drops }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ member.price }}</p>
+                    <form method="post" action="{% url 'remove_pal_from_fire_team' fire_team_id=fire_team.id pal_id=member.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Remove from Fire Team</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <form method="post" action="{% url 'delete_fire_team' fire_team_id=fire_team.id %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete Fire Team</button>
+    </form>
+</div>
+{% endblock %}
+
+
+<!-- <div class="card-body">
+    <h5 class="card-title">{{ pal.name }}</h5>
+    <p class="card-text"><strong>Type:</strong> {{ pal.type }}</p>
+    <p class="card-text"><strong>Skill:</strong> {{ pal.skill }}</p>
+    <p class="card-text"><strong>Work:</strong> {{ pal.work }}</p>
+    <p class="card-text"><strong>Drops:</strong> {{ pal.drops }}</p>
+    <p class="card-text"><strong>Price:</strong> ${{ pal.price }}</p>
+    <img src="{{ pal.image.url }}" alt="{{ pal.name }}" class="card-img-top"> -->
+
+
+

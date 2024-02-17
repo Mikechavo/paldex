@@ -13,39 +13,41 @@
     <link rel="stylesheet" href="{% static 'paldex/css/styles.css' %}">
 </head>
 <body>
-    <link rel="stylesheet" href="{% static 'paldex/css/styles.css' %}">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="{% url 'home' %}">Mike's Paldex</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav active">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'pals' %}">Pals</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="{% url 'contact' %}">Contact</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'pals' %}">Pals</a>
+            </li>
+           
 
             {% if user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-            </li>
-
+                {% for fire_team in user.fire_teams_led.all %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'fire_team_detail' fire_team.id %}" style="color:rgb(134, 12, 12)">{{ fire_team.name }}</a>
+                    </li>
+                {% endfor %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
             {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'register_user' %}">Register</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register_user' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
             {% endif %}
-
         </ul>
     </div>
 </nav>
@@ -56,9 +58,8 @@
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 {{ message }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
+            </div>
         {% endfor %}
-
     {% endif %}
     {% block content %} {% endblock %}
 </div>

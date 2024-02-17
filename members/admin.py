@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import FireTeam  # Import your FireTeam model
 
-# Register your models here.
+admin.site.register(FireTeam)

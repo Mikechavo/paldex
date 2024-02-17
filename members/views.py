@@ -1,9 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import RegisterUserForm, TeamForm
 from .models import FireTeam
 from paldex.models import PalModel 
+
+import logging
+
+logger = logging.getLogger(__name__)
 
 def login_user(request):
     if request.method == "POST":
@@ -43,29 +48,50 @@ def create_team(request):
     if request.method == 'POST':
         form = TeamForm(request.POST)
         if form.is_valid():
-            team = form.save()
-            return redirect('team_detail', team_id=team.id)
+            # Set the leader_id field to the current user's ID
+            fire_team = form.save(commit=False)
+            fire_team.leader_id = request.user.id
+            fire_team.save()
+            # Redirect to the home page or any other appropriate URL after creating the team
+            return redirect('home')
     else:
         form = TeamForm()
     return render(request, 'create_team.html', {'form': form})
 
-def team_detail(request, team_id):
-    team = FireTeam.objects.get(pk=team_id)
-    return render(request, 'team_detail.html', {'team': team})
+def fire_team_detail(request, fire_team_id):
+    fire_team = FireTeam.objects.get(pk=fire_team_id)
+    return render(request, 'authenticate/fire_team_detail.html', {'fire_team': fire_team})
 
-def add_to_fire_team(request, pal_name):
-    pal = get_object_or_404(PalModel, name=pal_name)
-    fire_team = FireTeam.objects.first()
+def add_to_fire_team(request, pal_id, fire_team_id):
+    pal = get_object_or_404(PalModel, pk=pal_id)
+    fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
+
+    logger.info(f"Pal ID: {pal_id}, Pal: {pal}, Fire Team: {fire_team}")
 
     if fire_team is not None:
         if fire_team.members.count() >= 5:
             messages.error(request, "Fire Team is full, please remove one or more Pals")
         else:
             fire_team.members.add(pal)
-            return redirect('fire_team_detail')  # Redirect to the correct URL
+            # Redirect to the Fire Team detail page after adding the Pal
+            return redirect('fire_team_detail', fire_team_id=fire_team.id)
     else:
-        # Handle the case where no FireTeam exists
         messages.error(request, "No Fire Team found")
-        # Redirect to an appropriate page or handle the error as needed
-        return redirect('home')  # Redirect to the home page for example
+    # Redirect to an appropriate page or handle the error as needed
+    return redirect('home')  # Redirect to the home page for example
+
+def delete_fire_team(request, fire_team_id):
+    fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
+    if request.method == 'POST':
+        fire_team.delete()
+        return redirect('home')  # Redirect to the home page or any other appropriate URL
+    return render(request, 'confirm_delete_fire_team.html', {'fire_team': fire_team})
+
+def remove_pal_from_fire_team(request, fire_team_id, pal_id):
+    fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
+    pal = get_object_or_404(PalModel, pk=pal_id)
+    if request.method == 'POST':
+        fire_team.members.remove(pal)
+        return redirect('fire_team_detail', fire_team_id=fire_team_id)  # Redirect to the fire team detail page
+    return render(request, 'confirm_remove_pal.html', {'fire_team': fire_team, 'pal': pal})
 

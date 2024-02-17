@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block title %} Create Team {% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: 'Comic Sans MS', sans-serif;
+        background-color: #ad4816;
+    }
+
+    h1,
+    p {
+        font-family: 'Comic Sans MS', sans-serif;
+    }
+</style>
+<div class="container my-5">
+    <h1 class="display-4 text-center mb-4" style="color:blue; font-weight: bold; text-transform: uppercase">Create New Fire Team</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Create Team</button>
+    </form>
+</div>
+{% endblock %}
