@@ -46,7 +46,6 @@ pygame==2.5.2
 PyGObject==3.42.1
 PyJWT==2.3.0
 pyparsing==2.4.7
-python-apt==2.4.0+ubuntu2
 pytz==2024.1
 PyYAML==5.4.1
 requests==2.31.0
