@@ -15,7 +15,7 @@ cymem==2.0.8
 dbus-python==1.2.18
 distro==1.7.0
 distro-info==1.1+ubuntu0.1
-Django==3.2.12  # Downgraded Django version
+Django==4.0.3
 django-bootstrap4==24.1
 Flask==3.0.0
 Flask-SQLAlchemy==3.1.1
