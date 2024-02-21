@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&ol+(noozhpak2!3s)b8kl8rqnc-4t71mhij2k@!%j7nhi_$s8
 DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app']
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 
 
@@ -79,12 +79,24 @@ WSGI_APPLICATION = 'palworld.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'palworld',
+        'USER': 'mike',
+        'PASSWORD': '1262',
+        'HOST': 'localhost',  # or your database host
+        'PORT': '5432',       # or your database port
     }
 }
+
 
 
 # Password validation

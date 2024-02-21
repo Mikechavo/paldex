@@ -12,7 +12,11 @@
         <div class="col-md-4 mb-4">
             <div class="card">
                 <div class="card-body">
-                    <img src="{{ member.image.url }}" alt="{{ member.name }}" class="card-img-top">
+                    {% if member.image %}
+                        <img src="{{ member.image.url }}" alt="{{ member.name }}" class="card-img-top">
+                    {% else %}
+                        <p>No image available</p>
+                    {% endif %}
                     <h5 class="card-title">{{ member.name }}</h5>
                     <p class="card-text"><strong>Type:</strong> {{ member.type }}</p>
                     <p class="card-text"><strong>Skill:</strong> {{ member.skill }}</p>
