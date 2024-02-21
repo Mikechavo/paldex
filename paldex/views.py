@@ -48,17 +48,12 @@ def search_view(request):
     
     if query:
         pals_data = get_pals_data()
-        # Search for pals whose type matches the query
+        # Search for pals whose type or name matches the query
         for pal in pals_data:
-            if query.lower() in pal['Type'].lower():
+            if query.lower() in pal['Type'].lower() or query.lower() in pal['Name'].lower():
                 search_results.append(pal)
-        
-        # If no results found, check if any pal has the query as its name
-        if not search_results:
-            for pal in pals_data:
-                if query.lower() in pal['Name'].lower():
-                    search_results.append(pal)
     
     return render(request, 'search_results.html', {'query': query, 'search_results': search_results})
+
 
 
