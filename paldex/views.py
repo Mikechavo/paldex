@@ -22,6 +22,7 @@ def search_view(request):
         
         # If no results found, check if any pal has the query as one of its types
         if not pal_data:
-            pal_data = PalModel.objects.filter(types__icontains=query.lower())
+            pal_data = PalModel.objects.filter(type__icontains=query.lower())
     
     return render(request, 'search_results.html', {'query': query, 'pal_data': pal_data})
+
