@@ -86,14 +86,25 @@ WSGI_APPLICATION = 'palworld.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'palworld',
+#         'USER': 'mike',
+#         'PASSWORD': '1262',
+#         'HOST': 'localhost',  # or your database host
+#         'PORT': '5432',       # or your database port
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'palworld',
-        'USER': 'mike',
-        'PASSWORD': '1262',
-        'HOST': 'localhost',  # or your database host
-        'PORT': '5432',       # or your database port
+        'NAME': os.getenv('POSTGRES_NAME'),      # Get database name from environment variable
+        'USER': os.getenv('POSTGRES_USER'),      # Get database user from environment variable
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),  # Get database password from environment variable
+        'HOST': os.getenv('POSTGRES_HOST'),      # Get database host from environment variable
+        'PORT': os.getenv('POSTGRES_PORT'),      # Get database port from environment variable
     }
 }
 
