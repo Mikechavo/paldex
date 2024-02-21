@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-&ol+(noozhpak2!3s)b8kl8rqnc-4t71mhij2k@!%j7nhi_$s8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = []
 
 
 
@@ -149,7 +149,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    # Add additional directories here if necessary
+]
 
 # Add this line for deployment
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
@@ -160,8 +163,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 LOGGING = {
     'version': 1,

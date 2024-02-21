@@ -48,21 +48,21 @@ h1, p {
         {% for pal in pal_data %}
         <div class="col-md-4 mb-4">
             <div class="card h-100 bg-light">
-                {% if pal.image %}
-                <img src="{{ pal.image.url }}" alt="{{ pal.name }}" class="card-img-top">
+                {% if pal.Image %}
+                <img src="{{ settings.MEDIA_URL }}{{ pal.Image }}" alt="{{ pal.Name }}" class="card-img-top">
                 {% else %}
                 <div class="text-center bg-secondary py-3">
                     <p class="m-0 text-light">No image available</p>
-                    <small class="text-muted">{{ pal.name }}</small>
+                    <small class="text-muted">{{ pal.Name }}</small>
                 </div>
                 {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">{{ pal.name }}</h5>
-                    <p class="card-text"><strong>Type:</strong> {{ pal.type }}</p>
-                    <p class="card-text"><strong>Skill:</strong> {{ pal.skill }}</p>
-                    <p class="card-text"><strong>Work:</strong> {{ pal.work }}</p>
-                    <p class="card-text"><strong>Drops:</strong> {{ pal.drops }}</p>
-                    <p class="card-text"><strong>Price:</strong> ${{ pal.price }}</p>
+                    <h5 class="card-title">{{ pal.Name }}</h5>
+                    <p class="card-text"><strong>Type:</strong> {{ pal.Type }}</p>
+                    <p class="card-text"><strong>Skill:</strong> {{ pal.Skill }}</p>
+                    <p class="card-text"><strong>Work:</strong> {{ pal.Work }}</p>
+                    <p class="card-text"><strong>Drops:</strong> {{ pal.Drops }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ pal.Price }}</p>
                 </div>
             </div>
         </div>

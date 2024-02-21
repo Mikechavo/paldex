@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import RegisterUserForm, TeamForm
 from .models import FireTeam
-from paldex.models import PalModel 
+# from paldex.models import PalModel 
 
 import logging
 
@@ -62,11 +62,11 @@ def fire_team_detail(request, fire_team_id):
     fire_team = FireTeam.objects.get(pk=fire_team_id)
     return render(request, 'authenticate/fire_team_detail.html', {'fire_team': fire_team})
 
-def add_to_fire_team(request, pal_id, fire_team_id):
-    pal = get_object_or_404(PalModel, pk=pal_id)
+def add_to_fire_team(request, pal_name, fire_team_id):
+    pal = next((pal for pal in pals_data if pal['Name'] == pal_name), None)
     fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
 
-    logger.info(f"Pal ID: {pal_id}, Pal: {pal}, Fire Team: {fire_team}")
+    logger.info(f"Pal Name: {pal_name}, Pal: {pal}, Fire Team: {fire_team}")
 
     if fire_team is not None:
         if fire_team.members.count() >= 5:
@@ -87,11 +87,12 @@ def delete_fire_team(request, fire_team_id):
         return redirect('home')  # Redirect to the home page or any other appropriate URL
     return render(request, 'confirm_delete_fire_team.html', {'fire_team': fire_team})
 
-def remove_pal_from_fire_team(request, fire_team_id, pal_id):
+def remove_pal_from_fire_team(request, fire_team_id, pal_name):
     fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
-    pal = get_object_or_404(PalModel, pk=pal_id)
+    pal = next((pal for pal in pals_data if pal['Name'] == pal_name), None)
     if request.method == 'POST':
         fire_team.members.remove(pal)
         return redirect('fire_team_detail', fire_team_id=fire_team_id)  # Redirect to the fire team detail page
     return render(request, 'confirm_remove_pal.html', {'fire_team': fire_team, 'pal': pal})
+
 
