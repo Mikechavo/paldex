@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -97,14 +98,17 @@ WSGI_APPLICATION = 'palworld.wsgi.application'
 #     }
 # }
 
+load_dotenv()
+
+# Database configuration
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_NAME'),      # Get database name from environment variable
-        'USER': os.getenv('POSTGRES_USER'),      # Get database user from environment variable
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),  # Get database password from environment variable
-        'HOST': os.getenv('POSTGRES_HOST'),      # Get database host from environment variable
-        'PORT': os.getenv('POSTGRES_PORT'),      # Get database port from environmen variable
+        'NAME': os.getenv('POSTGRES_NAME'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': os.getenv('POSTGRES_PORT'),
     }
 }
 
