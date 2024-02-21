@@ -4,8 +4,40 @@
 {% block title %} Home Page {% endblock %}
 
 {% block content %}
+<style>
+    body {
+        background-color: #ad4816; /* Set your desired background color */
+        font-family: 'Comic Sans MS', sans-serif;
+    }
 
-    <h1>Github</h1>
-    <h1>LinkedIN</h1>
+h1, p {
+    font-family: 'Comic Sans MS', sans-serif;
+}
 
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blue; /* Green */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+
+</style>
+<div>
+    <a href="https://github.com/Mikechavo" class="button">Visit GitHub</a>
+</div>
+<br>
+<div>
+    <a href="https://www.linkedin.com/in/michael-t-chavez/" class="button">Connect via LinkedIn</a>
+</div>
 {% endblock %}
