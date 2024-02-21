@@ -104,7 +104,7 @@ DATABASES = {
         'USER': os.getenv('POSTGRES_USER'),      # Get database user from environment variable
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),  # Get database password from environment variable
         'HOST': os.getenv('POSTGRES_HOST'),      # Get database host from environment variable
-        'PORT': os.getenv('POSTGRES_PORT'),      # Get database port from environment variable
+        'PORT': os.getenv('POSTGRES_PORT'),      # Get database port from environmen variable
     }
 }
 
