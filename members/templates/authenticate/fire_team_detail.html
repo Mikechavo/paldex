@@ -23,7 +23,7 @@
                     <p class="card-text"><strong>Work:</strong> {{ member.Work }}</p>
                     <p class="card-text"><strong>Drops:</strong> {{ member.Drops }}</p>
                     <p class="card-text"><strong>Price:</strong> ${{ member.Price }}</p>
-                    <form method="post" action="{% url 'remove_pal_from_fire_team' fire_team_id=fire_team.id pal_Name=member.Name %}">
+                    <form method="post" action="{% url 'remove_pal_from_fire_team' fire_team_id=fire_team.id pal_id=member.id %}">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-danger">Remove from Fire Team</button>
                     </form>
