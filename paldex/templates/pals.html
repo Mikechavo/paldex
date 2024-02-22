@@ -49,7 +49,7 @@
         <div class="col-md-4 mb-4;">
             <div class="card h-100 bg-light">
                 {% if pal.image %}
-                <img src="{{ pal.image.url }}" alt="{{ pal.name }}" class="card-img-top">
+                <img src="{{ settings.MEDIA_URL }}{{ pal.image.url }}" alt="{{ pal.name }}" class="card-img-top">
                 {% else %}
                 <div class="text-center bg-secondary py-3">
                     <p class="m-0 text-light">No image available</p>
