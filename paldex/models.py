@@ -14,3 +14,5 @@ class PalModel(models.Model):
     drops = models.CharField(_("Drops"), max_length=200)
     price = models.BigIntegerField(_("Price"))
 
+    def __str__(self):
+        return self.name

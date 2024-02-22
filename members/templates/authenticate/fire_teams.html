@@ -22,6 +22,14 @@
         {% for fire_team in fire_teams %}
         <div class="col-md-4 mb-4;">
             <div class="card h-100 bg-light">
+                {% if fire_team.image %}
+                    <img src="{{ fire_team.image.url }}" alt="{{ fire_team.name }}" class="card-img-top">
+                {% else %}
+                    <!-- Placeholder image or message when no image is available -->
+                    <div class="no-image-placeholder">
+                        No Image Available
+                    </div>
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ fire_team.name }}</h5>
                     <!-- You can display additional details about the Fire Team here -->

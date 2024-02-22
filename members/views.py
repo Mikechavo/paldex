@@ -4,7 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import RegisterUserForm, TeamForm
 from .models import FireTeam
-from paldex.models import PalModel 
+from paldex.models import PalModel  
+from django.core.exceptions import SuspiciousFileOperation
 
 import logging
 
@@ -59,8 +60,9 @@ def create_team(request):
     return render(request, 'create_team.html', {'form': form})
 
 def fire_team_detail(request, fire_team_id):
-    fire_team = FireTeam.objects.get(pk=fire_team_id)
-    return render(request, 'authenticate/fire_team_detail.html', {'fire_team': fire_team})
+    fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
+    return render(request, 'fire_team_detail.html', {'fire_team': fire_team})
+
 
 def add_to_fire_team(request, pal_id, fire_team_id):
     pal = get_object_or_404(PalModel, pk=pal_id)
@@ -94,5 +96,3 @@ def remove_pal_from_fire_team(request, fire_team_id, pal_id):
         fire_team.members.remove(pal)
         return redirect('fire_team_detail', fire_team_id=fire_team_id)  # Redirect to the fire team detail page
     return render(request, 'confirm_remove_pal.html', {'fire_team': fire_team, 'pal': pal})
-
-
