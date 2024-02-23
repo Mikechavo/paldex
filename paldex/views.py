@@ -48,9 +48,12 @@ def search_view(request):
     
     if query:
         pals_data = get_pals_data()
-        # Search for pals whose type or name matches the query
         for pal in pals_data:
-            if query.lower() in pal['Type'].lower() or query.lower() in pal['Name'].lower():
+            pal_type = pal.get('Type', '').lower()
+            if query.lower() in pal_type:
+                # Preprocess image path if Image key exists in pal
+                if 'Image' in pal:
+                    pal['Image'] = settings.MEDIA_URL + pal['Image']
                 search_results.append(pal)
     
     return render(request, 'search_results.html', {'query': query, 'search_results': search_results})
