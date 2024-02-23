@@ -62,23 +62,18 @@ def fire_team_detail(request, fire_team_id):
     fire_team = FireTeam.objects.get(pk=fire_team_id)
     return render(request, 'authenticate/fire_team_detail.html', {'fire_team': fire_team})
 
-def add_to_fire_team(request, pal_id, fire_team_id):
-    pal = get_object_or_404(PalModel, pk=pal_id)
+def add_to_fire_team(request, pal_name, fire_team_id):
     fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
-
-    logger.info(f"Pal ID: {pal_id}, Pal: {pal}, Fire Team: {fire_team}")
-
-    if fire_team is not None:
-        if fire_team.members.count() >= 5:
-            messages.error(request, "Fire Team is full, please remove one or more Pals")
-        else:
-            fire_team.members.add(pal)
-            # Redirect to the Fire Team detail page after adding the Pal
-            return redirect('fire_team_detail', fire_team_id=fire_team.id)
+    if fire_team:
+        fire_team.members[pal_name] = True  # Add the member to the dictionary
+        fire_team.save()  # Save the updated fire team
+        return redirect('fire_team_detail', fire_team_id=fire_team.id)
     else:
+        # Handle the case where the fire team does not exist
         messages.error(request, "No Fire Team found")
-    # Redirect to an appropriate page or handle the error as needed
-    return redirect('home')  # Redirect to the home page for example
+        return redirect('home')  # Redirect to the home page or an appropriate page
+
+
 
 def delete_fire_team(request, fire_team_id):
     fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
@@ -87,12 +82,21 @@ def delete_fire_team(request, fire_team_id):
         return redirect('home')  # Redirect to the home page or any other appropriate URL
     return render(request, 'confirm_delete_fire_team.html', {'fire_team': fire_team})
 
-def remove_pal_from_fire_team(request, fire_team_id, pal_id):
+
+def remove_pal_from_fire_team(request, pal_name, fire_team_id):
     fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
-    pal = get_object_or_404(PalModel, pk=pal_id)
-    if request.method == 'POST':
-        fire_team.members.remove(pal)
-        return redirect('fire_team_detail', fire_team_id=fire_team_id)  # Redirect to the fire team detail page
-    return render(request, 'confirm_remove_pal.html', {'fire_team': fire_team, 'pal': pal})
+    if fire_team:
+        if pal_name in fire_team.members:
+            del fire_team.members[pal_name]  # Remove the pal from the dictionary
+            fire_team.save()  # Save the updated fire team
+            return redirect('fire_team_detail', fire_team_id=fire_team.id)
+        else:
+            # Handle the case where the pal does not exist in the fire team
+            messages.error(request, "Pal not found in Fire Team")
+    else:
+        # Handle the case where the fire team does not exist
+        messages.error(request, "No Fire Team found")
+    return redirect('home')  # Redirect to the home page or an appropriate page
+
 
 

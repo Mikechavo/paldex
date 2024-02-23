@@ -10,9 +10,9 @@ urlpatterns = [
    path('register_user', views.register_user, name="register_user"),
    path('create/', create_team, name='create_team'),
    
-   path('add_to_fire_team/<int:pal_id>/<int:fire_team_id>/', views.add_to_fire_team, name='add_to_fire_team'), 
+   path('add_to_fire_team/<str:pal_name>/<int:fire_team_id>/', add_to_fire_team, name='add_to_fire_team'), 
    path('fire_team/<int:fire_team_id>/', views.fire_team_detail, name='fire_team_detail'),
-   path('remove_pal_from_fire_team/<int:fire_team_id>/<int:pal_id>/', views.remove_pal_from_fire_team, name='remove_pal_from_fire_team'),
+   path('remove_pal_from_fire_team/<int:fire_team_id>/<str:pal_name>/', views.remove_pal_from_fire_team, name='remove_pal_from_fire_team'),
    path('delete_fire_team/<int:fire_team_id>/', views.delete_fire_team, name='delete_fire_team'),
    
 
