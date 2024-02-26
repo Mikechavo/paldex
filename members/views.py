@@ -5,7 +5,8 @@ from django.contrib import messages
 from .forms import RegisterUserForm, TeamForm
 from .models import FireTeam
 from paldex.models import PalModel 
-
+from paldex.views import get_pals_data
+from django.conf import settings
 import logging
 
 logger = logging.getLogger(__name__)
@@ -58,6 +59,12 @@ def create_team(request):
         form = TeamForm()
     return render(request, 'create_team.html', {'form': form})
 
+def process_pal_data(pals_data):
+    for pal in pals_data:
+        pal['Image'] = settings.MEDIA_URL + pal['Image']
+    return pals_data
+
+
 def fire_team_detail(request, fire_team_id):
     fire_team = FireTeam.objects.get(pk=fire_team_id)
     return render(request, 'authenticate/fire_team_detail.html', {'fire_team': fire_team})
@@ -65,13 +72,17 @@ def fire_team_detail(request, fire_team_id):
 def add_to_fire_team(request, pal_name, fire_team_id):
     fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
     if fire_team:
-        fire_team.members[pal_name] = True  # Add the member to the dictionary
-        fire_team.save()  # Save the updated fire team
-        return redirect('fire_team_detail', fire_team_id=fire_team.id)
+        pals_data = get_pals_data()  # Retrieve pal data
+        pal_data = next((pal for pal in pals_data if pal['Name'] == pal_name), None)  # Find pal data by name
+        if pal_data:
+            fire_team.members[pal_name] = pal_data  # Add the member to the dictionary with its full data
+            fire_team.save()  # Save the updated fire team
+            return redirect('fire_team_detail', fire_team_id=fire_team.id)
+        else:
+            messages.error(request, f"No pal found with name '{pal_name}'")
     else:
-        # Handle the case where the fire team does not exist
         messages.error(request, "No Fire Team found")
-        return redirect('home')  # Redirect to the home page or an appropriate page
+    return redirect('home')
 
 
 

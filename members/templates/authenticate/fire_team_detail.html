@@ -8,32 +8,28 @@
     <!-- <p>Fire Team ID: {{ fire_team.id }}</p> -->
     <h2>Members:</h2>
     <div class="row">
-        {% for member_name, is_member in fire_team.members.items %}
-            {% if is_member %}
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            {% with member=member_name %}
-                                {% if member.image %}
-                                    <img src="{{ member.Image.url }}" alt="{{ member.Name }}" class="card-img-top">
-                                {% else %}
-                                    <p>No image available</p>
-                                {% endif %}
-                                <h5 class="card-title">{{ member.Name }}</h5>
-                                <p class="card-text"><strong>Type:</strong> {{ member.Type }}</p>
-                                <p class="card-text"><strong>Skill:</strong> {{ member.Skill }}</p>
-                                <p class="card-text"><strong>Work:</strong> {{ member.Work }}</p>
-                                <p class="card-text"><strong>Drops:</strong> {{ member.Drops }}</p>
-                                <p class="card-text"><strong>Price:</strong> ${{ member.Price }}</p>
-                                <form method="post" action="{% url 'remove_pal_from_fire_team' fire_team_id=fire_team.id pal_name=member_name %}">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn btn-danger">Remove from Fire Team</button>
-                                </form>
-                            {% endwith %}
-                        </div>
-                    </div>
+        {% for member_name, member_data in fire_team.members.items %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    {% if member_data.Image %}
+                        <img src="{{ settings.MEDIA_URL }}{{ member_data.Image }}" alt="{{ member_name }}" class="card-img-top">
+                    {% else %}
+                        <p>No image available</p>
+                    {% endif %}
+                    <h5 class="card-title">{{ member_name }}</h5>
+                    <p class="card-text"><strong>Type:</strong> {{ member_data.Type }}</p>
+                    <p class="card-text"><strong>Skill:</strong> {{ member_data.Skill }}</p>
+                    <p class="card-text"><strong>Work:</strong> {{ member_data.Work }}</p>
+                    <p class="card-text"><strong>Drops:</strong> {{ member_data.Drops }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ member_data.Price }}</p>
+                    <form method="post" action="{% url 'remove_pal_from_fire_team' fire_team_id=fire_team.id pal_name=member_name %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Remove from Fire Team</button>
+                    </form>
                 </div>
-            {% endif %}
+            </div>
+        </div>
         {% endfor %}
     </div>
     <form method="post" action="{% url 'delete_fire_team' fire_team_id=fire_team.id %}">
@@ -41,12 +37,8 @@
         <button type="submit" class="btn btn-danger">Delete Fire Team</button>
     </form>
 </div>
-<script>
-    window.onload = function() {
-        alert("The database is currently undergoing maintenance. Some features may be temporarily unavailable. We apologize for any inconvenience.");
-    };
-</script>
 {% endblock %}
+
 
 
 <!-- <div class="card-body">
