@@ -54,7 +54,7 @@ def create_team(request):
             fire_team.leader_id = request.user.id
             fire_team.save()
             # Redirect to the home page or any other appropriate URL after creating the team
-            return redirect('home')
+            return redirect('pals')
     else:
         form = TeamForm()
     return render(request, 'create_team.html', {'form': form})
@@ -66,8 +66,20 @@ def process_pal_data(pals_data):
 
 
 def fire_team_detail(request, fire_team_id):
-    fire_team = FireTeam.objects.get(pk=fire_team_id)
-    return render(request, 'authenticate/fire_team_detail.html', {'fire_team': fire_team})
+    fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
+    
+    # Get pal data
+    pals_data = get_pals_data()
+
+    # Update pal data with image URLs
+    for member_name, pal_data in fire_team.members.items():
+        if member_name in pals_data:
+            pal_data['Image'] = settings.MEDIA_URL + pal_data['Image']
+
+    context = {'fire_team': fire_team, 'pal_data': pals_data}
+    return render(request, 'authenticate/fire_team_detail.html', context)
+
+
 
 def add_to_fire_team(request, pal_name, fire_team_id):
     fire_team = get_object_or_404(FireTeam, pk=fire_team_id)
