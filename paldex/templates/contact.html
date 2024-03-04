@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load bootstrap4 %}
+{% load bootstrap4 static %}
 
 {% block title %} Contact Page {% endblock %}
 
@@ -17,7 +17,7 @@ h1, p {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: blue; /* Green */
+    background-color: rgb(63, 122, 231); /* Green */
     color: white;
     text-align: center;
     text-decoration: none;
@@ -34,10 +34,13 @@ h1, p {
 
 </style>
 <div>
-    <a href="https://github.com/Mikechavo" class="button">Visit GitHub</a>
+    <a href="https://github.com/Mikechavo" class="button">
+        <img src="{% static '/github.png' %}" alt="" class="card-img-top" style="max-height: 80px; max-width: 80px;"> Visit GitHub</a>
 </div>
 <br>
 <div>
-    <a href="https://www.linkedin.com/in/michael-t-chavez/" class="button">Connect via LinkedIn</a>
+    <a href="https://www.linkedin.com/in/michael-t-chavez/" class="button">
+        <img src="{% static '/linkedin.png' %}" alt="" class="card-img-top" style="max-height: 80px; max-width: 80px;"> Connect via LinkedIn</a>
 </div>
 {% endblock %}
+
